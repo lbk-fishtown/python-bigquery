@@ -23,7 +23,6 @@ if typing.TYPE_CHECKING:
     import pytest
 
 
-
 def test_update_table_expiration(
     capsys: "pytest.CaptureFixture[str]",
     table_id: str,
@@ -34,7 +33,7 @@ def test_update_table_expiration(
     expiration = datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(
         days=5
     )
-    
+
     update_table_expiration.update_table_expiration(table_id, expiration)
 
     out, _ = capsys.readouterr()

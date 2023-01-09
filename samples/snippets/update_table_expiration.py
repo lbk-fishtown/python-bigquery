@@ -21,9 +21,9 @@ def update_table_expiration(table_id, expiration):
 
     # [START bigquery_update_table_expiration]
     from google.cloud import bigquery
-    
+
     client = bigquery.Client()
-    
+
     # TODO(dev): Change table_id to the full name of the table you want to update.
     table_id = "your-project.your_dataset.your_table_name"
 
@@ -40,6 +40,6 @@ def update_table_expiration(table_id, expiration):
     table = client.get_table(table_id)  # Make an API request.
     table.expires = expiration
     table = client.update_table(table, ["expires"])  # API request
-    
+
     print(f"Updated {table_id}, expires {table.expires}.")
     # [END bigquery_update_table_expiration]
