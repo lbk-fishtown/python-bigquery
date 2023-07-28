@@ -39,7 +39,7 @@ dependencies = [
     # NOTE: Maintainers, please do not require google-cloud-core>=2.x.x
     # Until this issue is closed
     # https://github.com/googleapis/google-cloud-python/issues/10566
-    "google-cloud-core >= 1.4.1, <3.0.0dev",
+    "google-cloud-core >= 1.6.0, <3.0.0dev",
     "google-resumable-media >= 0.6.0, < 3.0dev",
     "packaging >= 20.0.0",
     "protobuf>=3.19.5,<5.0.0dev,!=3.20.0,!=3.20.1,!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5",  # For the legacy proto-based types.
@@ -51,7 +51,7 @@ extras = {
     # Keep the no-op bqstorage extra for backward compatibility.
     # See: https://github.com/googleapis/python-bigquery/issues/757
     "bqstorage": [
-        "google-cloud-bigquery-storage >= 2.0.0, <3.0.0dev",
+        "google-cloud-bigquery-storage >= 2.6.0, <3.0.0dev",
         # Due to an issue in pip's dependency resolver, the `grpc` extra is not
         # installed, even though `google-cloud-bigquery-storage` specifies it
         # as `google-api-core[grpc]`. We thus need to explicitly specify it here.
@@ -67,9 +67,15 @@ extras = {
         pyarrow_dependency,
         "db-dtypes>=0.3.0,<2.0.0dev",
     ],
-    "ipywidgets": ["ipywidgets==7.7.1"],
+    "ipywidgets": [
+        "ipywidgets>=7.7.0",
+        "ipykernel>=6.0.0",
+    ],
     "geopandas": ["geopandas>=0.9.0, <1.0dev", "Shapely>=1.8.4, <2.0dev"],
-    "ipython": ["ipython>=7.0.1,!=8.1.0"],
+    "ipython": [
+        "ipython>=7.23.1,!=8.1.0",
+        "ipykernel>=6.0.0",
+    ],
     "tqdm": ["tqdm >= 4.7.4, <5.0.0dev"],
     "opentelemetry": [
         "opentelemetry-api >= 1.1.0",
